@@ -9,8 +9,8 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden; /* Prevents double scrollbars */
-            background-color: #0d1117; /* Matches your dark theme */
+            overflow: hidden;
+            background-color: #0d1117; 
         }
         iframe {
             width: 100%;
@@ -20,6 +20,19 @@
     </style>
 </head>
 <body>
-    <iframe src="https://auxygen-grond.hf.space" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; microphone; midi; payment; vr; web-share" allowfullscreen="true"></iframe>
+    <iframe id="grond-frame" src="https://auxygen-grond.hf.space" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; microphone; midi; payment; vr; web-share" allowfullscreen="true"></iframe>
+
+    <script>
+        // Automatically force the browser focus into the iframe so keyboard WASD works instantly
+        window.onload = function() {
+            var iframe = document.getElementById('grond-frame');
+            iframe.focus();
+            
+            // Re-apply focus if the user clicks the black margins outside the iframe
+            document.body.addEventListener('click', function() {
+                iframe.focus();
+            });
+        };
+    </script>
 </body>
 </html>
