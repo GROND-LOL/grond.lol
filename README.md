@@ -1,4 +1,4 @@
-# 🔬 GROND ENVIRONMENT: Explicit Simulation Framework (v2.0)
+# GROND ENGINE
 
 **Grond** is a headless, stateless 2.5D Raycasting environment designed to execute entirely inside the Python code-interpreter sandboxes of Large Language Models (like Grok, ChatGPT, or Claude). 
 
